@@ -1,4 +1,4 @@
-import { Entity, model, property } from '@loopback/repository';
+import {Entity, model, property} from '@loopback/repository';
 
 @model()
 export class Todo extends Entity {
@@ -25,6 +25,15 @@ export class Todo extends Entity {
   })
   isComplete?: boolean;
 
+  @property({
+    type: 'string',
+  })
+  remindAtAddress?: string;
+
+  @property({
+    type: 'string',
+  })
+  remindAtGeo?: string;
 
   constructor(data?: Partial<Todo>) {
     super(data);
